@@ -1,8 +1,10 @@
+Bacteria [] carl;
 void setup()   
  {  
      size(1000,1000);
     background(255,255,255,255);
    carl = new Bacteria[20];
+  
    for(int i=0; i< carl.length; i++ )
    {
     carl[i] = new Bacteria();
@@ -10,50 +12,55 @@ void setup()
  	  
  }   
  void draw()   
- {    
- 	carl[1].move();
-    carl[1].show();
+ {  
+  for(int i=0; i< carl.length; i++)  
+ 	{
+    carl[i].move();
+    carl[i].show();
+  }
       
  }  
- class Bacteria    
+  int myX,myY,myColor;
+  class Bacteria    
  {    
     int myX,myY,myColor;
-    Bacteria()
+    Bacteria(int myX, int myY,int myColor)
     {
-    myX = x+400;
- myY=y+400;
-     color = stroke(0);
+    myX = 400;
+    myY=400;
+     myColor = fill(0);
     }
       void move()
       { 
-      int direction =(int)(math.random()*8)
-       if (direction==0)//right
+      int direction;
+       direction=(int)(math.random()*8);
+       if (direction==0) 
        {
         myX = myX + 5;
        }
-        else if (direction==1)//left
+        else if (direction==1) 
         {
          myX = myX - 5; 
         }
-         else if (direction==2)// down
+         else if (direction==2)
          {
          myY = myY + 5;
          }
-         else if (direction==3)//up
+         else if (direction==3)
          {
          myY = myY -5;
          }
-         else if (direction==4)// diaganol to upper right
+         else if (direction==4)
          {
          myX = myX + 5;
          myY= myY - 5;
          }
-         else if(direction==5)//diaganol to upper left
+         else if(direction==5)
          {
          myX = myX - 5;
          myY= myY - 5;
          }
-         else if(direction==6)// diaganol lowerleft
+         else if(direction==6)
          {
          myX = myX - 5;
          myY= myY + 5;
@@ -66,6 +73,6 @@ void setup()
          }
        void show()
      {
-      ellipse(myX,myY,20,20
+      ellipse(myX,myY,20,20);
  }    
  }
