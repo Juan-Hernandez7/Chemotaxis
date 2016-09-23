@@ -1,11 +1,11 @@
-Bacteria [] carl;
+Bacteria[] carl = new Bacteria[20];
 void setup()   
  {  
      size(1000,1000);
     background(255,255,255,255);
    carl = new Bacteria[20];
   
-   for(int i=0; i< carl.length; i++ )
+   for(int i=0; i<carl.length; i++)
    {
     carl[i] = new Bacteria();
    }
@@ -24,16 +24,16 @@ void setup()
   class Bacteria    
  {    
     int myX,myY,myColor;
-    Bacteria(int myX, int myY,int myColor)
+    Bacteria()
     {
     myX = 400;
     myY=400;
-     myColor = fill(0);
+     
     }
       void move()
       { 
       int direction;
-       direction=(int)(math.random()*8);
+       direction=(int)(Math.random()*8);
        if (direction==0) 
        {
         myX = myX + 5;
@@ -74,5 +74,6 @@ void setup()
        void show()
      {
       ellipse(myX,myY,20,20);
+      stroke(0);
  }    
  }
