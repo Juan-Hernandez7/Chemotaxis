@@ -12,9 +12,10 @@ void setup()
  	  
  }   
  void draw()   
- {  
+ {  background(0);
   for(int i=0; i< carl.length; i++)  
  	{
+
     carl[i].move();
     carl[i].show();
   }
@@ -73,6 +74,7 @@ void setup()
          }
        void show()
      {
+      fill(255,0,0);
       ellipse(myX,myY,20,20);
       stroke(0);
  }    
